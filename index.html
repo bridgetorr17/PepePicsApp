@@ -4,19 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <h1>Pepe Pics</h1>
-    <form action="https://pepe-pics-backend.vercel.app/api/upload" method="POST" enctype="multipart/form-data">
-        <input type="file" name="file">
-        <input type="text" name="name" id="catName">
-        <label for="catName">Feline Name</label>
-        <input type="text" name="caption" id="photoCaption">
-        <label for="photoCaption">Caption</label>
-        <input type="submit" value="Submit">
-    </form>
+    <section id="uploadCat">
+        <form action="https://pepe-pics-backend.vercel.app/api/upload" method="POST" enctype="multipart/form-data">
+            <input type="file" name="file">
+            <input type="text" name="name" id="catName">
+            <label for="catName">Feline Name</label>
+            <input type="text" name="caption" id="photoCaption">
+            <label for="photoCaption">Caption</label>
+            <input type="submit" value="Submit">
+        </form>
+    </section>
     <section id="catFeed">
-
+        <ul id="catFeedList">
+        </ul>
     </section>
     <script src="/main.js"></script>
 </body>
