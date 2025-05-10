@@ -17,19 +17,25 @@
             <img src="/images/logo.png" alt="">
             <h1>Pepe <br> Pics</h1>
         </section>
-        <span>Post A Feline Friend</span>
-        <nav>Explore</nav>
+        <button id="postPopup">Post A Feline Friend</button>
+        <div id="overlay" >
+            <section id="popupContainer" class="darkPurple">
+                <section id="postPopupContent">
+                    <img id="popupClose" src="/images/close.png" alt="Close">
+                    <h2>Post a Cat Photo</h2>
+                    <form id="uploadCat" enctype="multipart/form-data">
+                        <input type="file" name="file" required>
+                        <label for="catName">Feline Name</label>
+                        <input type="text" name="name" id="catName" required>
+                        <label for="photoCaption">Caption</label>
+                        <input type="text" name="caption" id="photoCaption">
+                        <input type="submit" value="Submit">
+                    </form>
+                </section>
+            </section>
+        </div>
+        <nav><img src="/images/hamburger.png" alt=""></nav>
     </header>
-    <section>
-        <form id="uploadCat" enctype="multipart/form-data">
-            <input type="file" name="file">
-            <input type="text" name="name" id="catName">
-            <label for="catName">Feline Name</label>
-            <input type="text" name="caption" id="photoCaption">
-            <label for="photoCaption">Caption</label>
-            <input type="submit" value="Submit">
-        </form>
-    </section>
     <section id="catFeed">
         <ul id="catFeedList">
         </ul>
