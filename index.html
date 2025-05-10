@@ -3,13 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="icon" href="images/logo.png">
+    <title>PepePics</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fjord+One&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
-<body>
-    <h1>Pepe Pics</h1>
-    <section id="uploadCat">
-        <form action="https://pepe-pics-backend.vercel.app/api/upload" method="POST" enctype="multipart/form-data">
+<body class="creme">
+    <header class="darkPurple">
+        <section>
+            <img src="/images/logo.png" alt="">
+            <h1>Pepe <br> Pics</h1>
+        </section>
+        <span>Post A Feline Friend</span>
+        <nav>Explore</nav>
+    </header>
+    <section>
+        <form id="uploadCat" enctype="multipart/form-data">
             <input type="file" name="file">
             <input type="text" name="name" id="catName">
             <label for="catName">Feline Name</label>

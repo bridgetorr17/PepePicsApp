@@ -1,3 +1,4 @@
+//get cat feed from server
 try{
     fetch('https://pepe-pics-backend.vercel.app/api/getFelines')
     .then(response => response.json())
@@ -11,6 +12,26 @@ try{
 catch(error){
     console.log(error);
 }
+
+//POST a cat photo with JS(handled here to prevent showing photo object from server response)
+document.getElementById('uploadCat').addEventListener('submit', async function(event){
+    event.preventDefault();
+
+    const formData = new FormData(event.target);
+
+    try{
+        const res = await fetch('https://pepe-pics-backend.vercel.app/api/upload', {
+            method: 'POST',
+            body: formData
+        });
+
+        const data = await res.json();
+        console.log(data);
+    }
+    catch(error){
+        console.log(error);
+    }
+})
 
 function addElement(cat){
     let catFeed = document.getElementById('catFeedList');
