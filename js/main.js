@@ -65,6 +65,7 @@ function addElement(cat){
     let caption = document.createElement('span');
     let section = document.createElement('section');
 
+    li.setAttribute('class', 'catPost');
     img.setAttribute('src', cat.url);
     img.setAttribute('class', 'catImage')
     name.setAttribute('class', 'name');

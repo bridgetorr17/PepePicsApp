@@ -146,15 +146,66 @@ POST popup
     text-align: center;
 }
 /*
+NAVIGATION BAR
+*/
+#nav{
+    position: relative;
+    display: inline-block;
+}
+  
+.dropdown {
+    position: absolute;
+    top: 0;
+    right: 10%;
+    background-color: #23162b;
+    border-radius: 1rem;
+    z-index: 100;
+    width: 4rem;
+
+    transform-origin: top;
+    transform: scaleY(0);
+    transition: transform 0.5s ease;
+    pointer-events: none;
+}
+
+#nav:hover .dropdown{
+    transform: scaleY(1);
+    pointer-events: auto;
+}
+
+.navPage {
+    list-style: none;
+    padding: 1rem;
+    margin-left: -4rem;
+    z-index: 1000;
+}
+
+.navPage:first-of-type{
+    border-radius: 1rem 1rem 0 0;
+}
+
+.navPage:last-of-type{
+    border-radius: 0 0 1rem 1rem;
+}
+
+.navPage:hover{
+    background-color: #829891;
+}
+  
+.navPage a {
+    text-decoration: none;
+    color: #f7f2e5;
+}
+/*
 CAT FEED
 */
-ul{
+#catFeetList{
     list-style: none;
     display: flex;
     flex-direction: column-reverse;
 }
 
-li{
+.catPost{
     display: flex;
     flex-direction: row;
     margin: 3rem;
@@ -180,4 +231,14 @@ li{
 
 .caption{
     font-size: 1rem;
+}
+
+/*
+FOR MOBILE
+*/
+@media all and (max-width: 500px){
+    header{
+        padding: 3rem 1rem;
+        justify-content: space-around;
+    }
 }
