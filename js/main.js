@@ -52,6 +52,8 @@ document.getElementById('uploadCat').addEventListener('submit', async function(e
 
     //reload the page with the updated post
     document.getElementById('catFeedList').innerHTML = "";
+    document.getElementById('postMessage').innerHTML = "Thank you for your post"
+    document.getElementById('uploadCat').reset();
     getFelines();
 })
 

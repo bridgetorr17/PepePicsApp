@@ -9,7 +9,7 @@ body, *{
 }
 
 .creme{
-    background-color: #fdf5e2;
+    background-color: #f7f2e5;
 }
 
 .tan{
@@ -37,7 +37,7 @@ header{
     flex-wrap: wrap;
     justify-content: space-between;
     padding: 3rem;
-    background-image: linear-gradient(#829891 20%, #fdf5e2);
+    background-image: linear-gradient(#829891 20%, #f7f2e5);
 }
 
 header section{
@@ -101,7 +101,7 @@ POST popup
     border-radius: 5%;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     z-index: 1000;
-    height: 80vh;
+    min-height: 40vh;
 }
 
 #postPopupContent{
@@ -141,6 +141,10 @@ POST popup
 #uploadCat label{
     font-size: 1.5rem;
 }
+
+#postMessage{
+    text-align: center;
+}
 /*
 CAT FEED
 */
@@ -160,7 +164,7 @@ li{
 }
 
 .catImage{
-    width: 40%;
+    width: 60%;
     border-radius: 1rem;
 }
 

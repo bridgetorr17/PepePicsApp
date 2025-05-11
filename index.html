@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fjord+One&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
 </head>
 <body class="creme">
     <header class="darkPurple">
@@ -21,25 +21,26 @@
         <div id="overlay" >
             <section id="popupContainer" class="darkPurple">
                 <section id="postPopupContent">
-                    <img id="popupClose" src="/images/close.png" alt="Close">
+                    <img id="popupClose" src="images/close.png" alt="Close">
                     <h2>Post a Cat Photo</h2>
                     <form id="uploadCat" enctype="multipart/form-data">
-                        <input type="file" name="file" required>
+                        <input type="file" name="file" accept="image/jpeg,image/png" required>
                         <label for="catName">Feline Name</label>
                         <input type="text" name="name" id="catName" required>
                         <label for="photoCaption">Caption</label>
                         <input type="text" name="caption" id="photoCaption">
                         <input type="submit" value="Submit">
                     </form>
+                    <span id="postMessage"></span>
                 </section>
             </section>
         </div>
-        <nav><img src="/images/hamburger.png" alt=""></nav>
+        <nav><img src="images/hamburger.png" alt=""></nav>
     </header>
     <section id="catFeed">
         <ul id="catFeedList">
         </ul>
     </section>
-    <script src="/main.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
 </body>
 </html>
