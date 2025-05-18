@@ -18,6 +18,7 @@ popupClose.addEventListener('click', _ => {
 function getFelines(){
     try{
         fetch('https://pepe-pics-backend.vercel.app/api/getFelines')
+        //fetch('http://localhost:3000/api/getFelines')
         .then(response => response.json())
         .then(data => {
             //add concert data already existing in the DB
@@ -39,6 +40,7 @@ document.getElementById('uploadCat').addEventListener('submit', async function(e
 
     try{
         const res = await fetch('https://pepe-pics-backend.vercel.app/api/upload', {
+        //const res = await fetch('http://localhost:3000/api/upload',{
             method: 'POST',
             body: formData
         });
@@ -64,6 +66,7 @@ function addElement(cat){
     let name = document.createElement('span');
     let caption = document.createElement('span');
     let section = document.createElement('section');
+    let date = document.createElement('span');
 
     li.setAttribute('class', 'catPost');
     img.setAttribute('src', cat.url);
@@ -73,10 +76,12 @@ function addElement(cat){
     section.setAttribute('class', 'catContent darkPurple');
     name.innerHTML = cat.name;
     caption.innerHTML = cat.caption;
+    date.innerHTML = "posted on " + cat.createdAt;
 
     li.appendChild(img);
     li.appendChild(section);
     section.appendChild(name);
     section.appendChild(caption);
+    section.append(date);
     catFeed.appendChild(li);
 }
