@@ -18,8 +18,8 @@ popupClose.addEventListener('click', _ => {
 //get cat feed from server
 function getFelines(){
     try{
-        //fetch('https://pepe-pics-backend.vercel.app/api/getFelines')
-        fetch('http://localhost:3000/api/getFelines')
+        fetch('https://pepe-pics-backend.vercel.app/api/getFelines')
+        //fetch('http://localhost:3000/api/getFelines')
         .then(response => response.json())
         .then(data => {
             //add concert data already existing in the DB
@@ -42,8 +42,8 @@ document.getElementById('uploadCat').addEventListener('submit', async function(e
     let message = '';
 
     try{
-        //const res = await fetch('https://pepe-pics-backend.vercel.app/api/upload', {
-        const res = await fetch('http://localhost:3000/api/upload',{
+        const res = await fetch('https://pepe-pics-backend.vercel.app/api/upload', {
+        //const res = await fetch('http://localhost:3000/api/upload',{
             method: 'POST',
             body: formData
         });
