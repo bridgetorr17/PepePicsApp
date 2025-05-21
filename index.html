@@ -23,7 +23,7 @@
                 <section id="postPopupContent">
                     <img id="popupClose" src="images/close.png" alt="Close">
                     <h2>Post a Cat Photo</h2>
-                    <form id="uploadCat" enctype="multipart/form-data">
+                    <form id="uploadCat" enctype="multipart/form-data" class="hidden">
                         <input type="file" name="file" accept="image/jpeg,image/png" required>
                         <label for="catName">Feline Name</label>
                         <input type="text" name="name" id="catName" required>
@@ -32,6 +32,7 @@
                         <input type="submit" value="Submit">
                     </form>
                     <span id="postMessage"></span>
+                    <button id="tryAgain" class="hidden">Try Again</button>
                 </section>
             </section>
         </div>

@@ -78,6 +78,10 @@ nav img{
 POST popup
 */
 
+.hidden {
+    display: none !important; 
+}
+
 #overlay{
     display: none;
     position: fixed;
@@ -124,7 +128,8 @@ POST popup
     flex-direction: column;
 }
 
-#uploadCat input{
+#uploadCat input, 
+#popupContainer button{
     font-size: 1.5rem;
     margin-bottom: 1rem;
     border-radius: 0.5rem;
@@ -132,7 +137,7 @@ POST popup
     background-color: rgba(255, 179, 159, 0.5);
 }
 
-#uploadCat input:last-of-type{
+#uploadCat button{
     margin-top: 1rem;
     width: 50%;
     align-self: center;
@@ -144,6 +149,7 @@ POST popup
 
 #postMessage{
     text-align: center;
+    font-size: 1.5rem;
 }
 /*
 NAVIGATION BAR

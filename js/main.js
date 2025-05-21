@@ -5,6 +5,7 @@ const popupButton = document.querySelector('#postPopup');
 const popupClose = document.querySelector('#popupClose');
 
 popupButton.addEventListener('click', _ => {
+    document.getElementById("uploadCat").setAttribute('class', '');
     document.getElementById("overlay").style.display = "block";
     document.getElementById("popupContainer").style.display = "block";
 });
@@ -17,8 +18,8 @@ popupClose.addEventListener('click', _ => {
 //get cat feed from server
 function getFelines(){
     try{
-        fetch('https://pepe-pics-backend.vercel.app/api/getFelines')
-        //fetch('http://localhost:3000/api/getFelines')
+        //fetch('https://pepe-pics-backend.vercel.app/api/getFelines')
+        fetch('http://localhost:3000/api/getFelines')
         .then(response => response.json())
         .then(data => {
             //add concert data already existing in the DB
@@ -38,24 +39,42 @@ document.getElementById('uploadCat').addEventListener('submit', async function(e
 
     const formData = new FormData(event.target);
 
+    let message = '';
+
     try{
-        const res = await fetch('https://pepe-pics-backend.vercel.app/api/upload', {
-        //const res = await fetch('http://localhost:3000/api/upload',{
+        //const res = await fetch('https://pepe-pics-backend.vercel.app/api/upload', {
+        const res = await fetch('http://localhost:3000/api/upload',{
             method: 'POST',
             body: formData
         });
 
         const data = await res.json();
         console.log(data);
+        console.log(res.status);
+        message = data.message;
+        if (res.status === 406){
+            document.getElementById('tryAgain').setAttribute('class', '');
+            document.getElementById('tryAgain').addEventListener('click', function() {
+                // Show the form again
+                document.getElementById('postMessage').innerHTML = '';
+                document.getElementById('uploadCat').classList.remove('hidden');
+                document.getElementById('tryAgain').setAttribute('class', 'hidden');
+            });
+        }
     }
     catch(error){
         console.log(error);
     }
 
+    //display message from server 
+    document.getElementById('postMessage').innerHTML = message;
+
+    //hide the form
+    document.getElementById('uploadCat').reset();
+    document.getElementById('uploadCat').setAttribute('class', 'hidden');
+    
     //reload the page with the updated post
     document.getElementById('catFeedList').innerHTML = "";
-    document.getElementById('postMessage').innerHTML = "Thank you for your post"
-    document.getElementById('uploadCat').reset();
     getFelines();
 })
 
