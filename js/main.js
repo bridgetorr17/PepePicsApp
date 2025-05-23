@@ -8,6 +8,7 @@ popupButton.addEventListener('click', _ => {
     document.getElementById("uploadCat").setAttribute('class', '');
     document.getElementById("overlay").style.display = "block";
     document.getElementById("popupContainer").style.display = "block";
+    document.getElementById('postMessage').innerHTML = '';
 });
 
 popupClose.addEventListener('click', _ => {
@@ -93,6 +94,7 @@ function addElement(cat){
     name.setAttribute('class', 'name');
     caption.setAttribute('class', 'caption');
     section.setAttribute('class', 'catContent darkPurple');
+    date.setAttribute('class', 'postedOn');
     name.innerHTML = cat.name;
     caption.innerHTML = cat.caption;
     date.innerHTML = "posted on " + cat.createdAt;

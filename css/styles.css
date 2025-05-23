@@ -57,12 +57,12 @@ header h1{
 
 header > button{
     margin-left: -15rem;
-    align-self: flex-end;
+    align-self: center;
     padding: 1rem;
     color: #fdf5e2;
     background-color: #23162b;
     border-radius: 1rem;
-    font-size: 1.5rem;
+    font-size: 3vw;
 }
 
 nav{
@@ -205,10 +205,11 @@ NAVIGATION BAR
 /*
 CAT FEED
 */
-#catFeetList{
+#catFeedList{
+    padding-left: 0;
     list-style: none;
     display: flex;
-    flex-direction: column-reverse;
+    flex-direction: column;
 }
 
 .catPost{
@@ -221,22 +222,28 @@ CAT FEED
 }
 
 .catImage{
-    width: 30%;
+    width: 60%;
+    max-width: 500px;
+    aspect-ratio: auto;
     border-radius: 1rem;
 }
 
 .catContent{
     display: flex;
     flex-direction: column;
-    margin: 3rem;
+    margin-left: 3rem;
 }
 
 .name{
-    font-size: 2.5rem;
+    font-size: 6.5vw;
 }
 
 .caption{
-    font-size: 1rem;
+    font-size: 4vw;
+}
+
+.postedOn{
+    font-size: 3vw;
 }
 
 /*
