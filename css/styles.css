@@ -237,15 +237,15 @@ CAT FEED
 }
 
 .name{
-    font-size: 6.5vw;
+    font-size: 50em;;
 }
 
 .caption{
-    font-size: 4vw;
+    font-size: 30em;
 }
 
 .postedOn{
-    font-size: 3vw;
+    font-size: 20em;
 }
 
 /*
@@ -255,5 +255,25 @@ FOR MOBILE
     header{
         padding: 3rem 1rem;
         justify-content: space-around;
+    }
+
+    .name{
+        font-size: 15em;
+    }
+
+    .caption{
+        font-size: 12em;
+    }
+
+    .postedOn{
+        font-size: 8em;
+    }
+
+    .catPost{
+        padding: 1.5rem;
+    }
+    
+    .catContent{
+        margin-left: 1rem;
     }
 }
