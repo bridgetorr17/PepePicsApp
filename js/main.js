@@ -1,5 +1,4 @@
 getFelines();
-let loader = [];
 
 //popup window logic and event listeners
 const popupButton = document.querySelector('#postPopup');
@@ -41,9 +40,9 @@ document.getElementById('uploadCat').addEventListener('submit', async function(e
 
     const formData = new FormData(event.target);
 
-    let message = '';
+    let message = 'Loading...';
+    document.getElementById('postMessage').innerHTML = message;
 
-    loaderStart();
     try{
         const res = await fetch('https://pepe-pics-backend.vercel.app/api/upload', {
         //const res = await fetch('http://localhost:3000/api/upload',{
@@ -53,7 +52,6 @@ document.getElementById('uploadCat').addEventListener('submit', async function(e
 
         const data = await res.json();
         console.log(data);
-        stopLoader();
         console.log(res.status);
         message = data.message;
         if (res.status === 406){
@@ -73,6 +71,10 @@ document.getElementById('uploadCat').addEventListener('submit', async function(e
     //display message from server 
     document.getElementById('postMessage').innerHTML = message;
 
+    //hide the form
+    document.getElementById('uploadCat').reset();
+    document.getElementById('uploadCat').setAttribute('class', 'hidden');
+    
     //reload the page with the updated post
     document.getElementById('catFeedList').innerHTML = "";
     getFelines();
@@ -104,41 +106,4 @@ function addElement(cat){
     section.appendChild(caption);
     section.append(date);
     catFeed.appendChild(li);
-}
-
-function loaderStart(){
-    //hide the form
-    document.getElementById('uploadCat').reset();
-    document.getElementById('uploadCat').setAttribute('class', 'hidden');
-
-    for(let i=1; i<4; i++){
-        document.getElementById(`loader${i}`) = loader[i-1];
-    }
-
-    loaderGo();
-}
-
-function loaderGo(){
-    loader[0].classList.remove('hidden');
-    setTimeout(() => {
-        console.log('loader 1');
-    }, 1500);
-
-    loader[1].classList.remove('hidden');
-    setTimeout(() => {
-        console.log('loader 1');
-    }, 1500);
-
-    loader[2].classList.remove('hidden');
-    setTimeout(() => {
-        console.log('loader 1');
-    }, 1500);
-
-    loader[0].setAttribute('class', 'hidden');
-    loader[1].setAttribute('class', 'hidden');
-    loader[2].setAttribute('class', 'hidden');
-}
-
-function stopLoader(){
-
 }
