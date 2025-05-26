@@ -40,7 +40,8 @@ document.getElementById('uploadCat').addEventListener('submit', async function(e
 
     const formData = new FormData(event.target);
 
-    let message = '';
+    let message = 'Loading...';
+    document.getElementById('postMessage').innerHTML = message;
 
     try{
         const res = await fetch('https://pepe-pics-backend.vercel.app/api/upload', {

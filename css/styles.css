@@ -137,12 +137,6 @@ POST popup
     background-color: rgba(255, 179, 159, 0.5);
 }
 
-#uploadCat button{
-    margin-top: 1rem;
-    width: 50%;
-    align-self: center;
-}
-
 #uploadCat label{
     font-size: 1.5rem;
 }
@@ -152,9 +146,17 @@ POST popup
     font-size: 1.5rem;
 }
 /*
+LOADER
+*/
+.loader{
+    display: inline;
+    font-size: 10vw;
+}
+
+/*
 NAVIGATION BAR
 */
-#nav{
+/* #nav{
     position: relative;
     display: inline-block;
 }
@@ -201,7 +203,7 @@ NAVIGATION BAR
 .navPage a {
     text-decoration: none;
     color: #f7f2e5;
-}
+} */
 /*
 CAT FEED
 */
